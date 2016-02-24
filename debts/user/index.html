@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="phonegap.js"></script>
+        <script src="js/akorno.js" type="text/javascript"></script>
+        <script>
+            function read() {
+                cordova.plugins.barcodeScanner.scan(
+                        function (result) {
+                            alert("Just got a barcode\n" +
+                                    "Result: " + result.text + "\n" +
+                                    "Format: " + result.format + "\n" +
+                                    "Cancelled: " + result.cancelled);
+                        },
+                        function (error) {
+                            alert("Scanning failed: " + error);
+                        }
+                );
+            }
+        </script>
+    </head>
+    <body>        
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div data-role="page" id="pageone" data-theme="b">
+            <div data-role="header">
+                <h1>AKORNO DEBTS LIST</h1>
+                <a href="#pageone" data-role="button" data-icon="" data-iconpos="right" class="ui-btn-left"><div class="">Hi </div></a>
+                <a href="#pageone" data-role="button" data-icon="arrow-u" data-iconpos="right" class="ui-btn-right"  onclick="logout()">Logout</a>
+
+                <div data-role="navbar"> 
+                    <ul>
+                        <li><a href="#pageone" data-icon="minus" data-iconpos="left" class="ui-btn-active ui-state-persist" data-transition="turn">Pay-Up</a></li>
+                        <li><a href="#add_stud" data-icon="plus" data-iconpos="left" data-transition="flip" >Add New User</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div role="main" class="ui-content">
+                <p>Please Enter Details</p>
+                <div data-role="fieldcontain">
+                    <div> &nbsp; </div>
+                    <label for="student_name">Name:</label>
+                    <input type="text" name="student_name" id="student_name" placeholder="No Name Del" disabled="disabled">
+                    <!--<select name="student_name" id="student_name"  data-mini="true" data-iconpos="left">-->
+                    <!--                    <select name="student_name" id="student_name" data-iconpos="left">
+                                            <option value="0">Del Coker</option>
+                                            <option value="1">The 1st Option</option>
+                                            <option value="2">The 2nd Option</option>
+                                            <option value="3">The 3rd Option</option>
+                                            <option value="4">The 4th Option</option>
+                                        </select>-->
+
+                    <div> &nbsp; </div>
+                    <label for="student_id">I.D. Num:</label>
+                    <input type="text" name="student_id" id="student_id" placeholder="80082015"  onkeyup="check()">
+                    <div> &nbsp; </div>
+                    <label for="scn">Scan:</label>
+                    <input type="button" id="scn" value="Scan Card" onclick="read()">
+                    <div> &nbsp; </div>
+                    <label for="amount_owed">Amount Owed:</label>
+                    <input type="number" name="amount_owed" id="amount_owed" placeholder="$0.00" step="0.01" min="0" disabled="disabled">
+                    <div> &nbsp; </div>
+                    <label for="owe_more">Akorno Owe's:</label>
+                    <input type="number" name="owe_more" id="owe_more" placeholder="$0.00" step="0.01" min="0">
+                    <div> &nbsp; </div>
+                    <label for="pay_some">Akorno's Paying:</label>
+                    <input type="number" name="pay_some" id="pay_some" placeholder="$0.00" step="0.01" min="0">
+                    <div> &nbsp; </div>
+                    <label></label>
+                    <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all" data-transition="flip" onclick="submit()" >SUBMIT</a>
+                    <div> &nbsp; </div><label></label>
+
+                </div>
+                <!--</form>-->
+            </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div data-role="footer">
+                <h1>Del Works</h1>
+                <label for="ip1">IP:</label>
+                <input type="text" name="ip" id="ip1" class="ip" onkeyup="enter_ip()">
+                <div> &nbsp; </div>
+            </div>
+            <!--<a href="#pageone" data-transition="pop">Slide to Page</a>-->
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <div data-role="page" id="add_stud" data-theme="b">
+            <div data-role="header">
+                <h1>AKORNO DEBT SHEET</h1>
+                <a href="#pageone" data-role="button" data-icon="" data-iconpos="right" class="ui-btn-left"><div class="">Hi </div></a>
+                <a href="#pageone" data-role="button" data-icon="arrow-u" data-iconpos="right" class="ui-btn-right"  onclick="logout()">Logout</a>
+
+                <div data-role="navbar"> 
+                    <ul>
+                        <li><a href="#pageone" data-icon="minus" data-iconpos="left" data-transition="turn">Pay-Up</a></li>
+                        <li><a href="#add_stud" data-icon="plus" data-iconpos="left" data-transition="turn" class="ui-btn-active ui-state-persist">Add New User</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div role="main" class="ui-content">
+                <p>Please Enter Details</p>
+                <div data-role="fieldcontain">
+                    <div> &nbsp; </div>
+                    <label for="student_name">Student Name:</label>
+                    <input type="text" name="stud_name" id="stud_name" placeholder="No Name Del">
+                    <!--<select name="student_name" id="student_name"  data-mini="true" data-iconpos="left">-->
+                    <!--                    <select name="student_name" id="student_name" data-iconpos="left">
+                                            <option value="0">Del Coker</option>
+                                            <option value="1">The 1st Option</option>
+                                            <option value="2">The 2nd Option</option>
+                                            <option value="3">The 3rd Option</option>
+                                            <option value="4">The 4th Option</option>
+                                        </select>-->
+
+                    <div> &nbsp; </div>
+                    <label for="student_id">Student Num:</label>
+                    <input type="text" name="stud_id" id="stud_id" placeholder="80082015"  onkeyup="check2()">
+                    <div> &nbsp; </div>
+                    <label for="scnn">Scan:</label>
+                    <input type="button" id="scnn" value="Scan Card" onclick="read()">
+                    <div> &nbsp; </div>
+                    <label></label>
+                    <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all" data-transition="flip" onclick="add_student()" >SUBMIT</a>
+                    <div> &nbsp; </div><label></label>
+
+                </div>
+                <!--</form>-->
+            </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <div data-role="footer">
+                <h1>Del Works</h1>
+                <label for="ip2">IP:</label>
+                <input type="text" name="ip" class="ip" id="ip2" onkeyup="enter_ip()">
+                <div> &nbsp; </div>
+            </div>
+            <!--<a href="#pageone" data-transition="pop">Slide to Page</a>-->
+        </div>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+    </body>
+</html>
