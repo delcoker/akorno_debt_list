@@ -76,7 +76,7 @@ function enter_ip() {
 //    10.10.10.10
     if (ip.length > 10) {
         phonegap = "http://" + ip + "/akorno/debts/user/";
-        prompt("url" , phonegap);
+//        prompt("url" , phonegap);
     }
 }
 
@@ -158,7 +158,7 @@ function submit() {
         var u = phonegap + "php/action.php?cmd=3&student_id=" + student_id + "&owe_more=" + owe_more;// + "&ass=" + ass;
 //    var u = phonegap + "php/action.php?cmd=2&student_id=" + student_id + "&student_name=" + student_name + "&amount_owed=" + amount_owed + "&amount_paid=" + amount_paid + "&owe_more=" + owe_more;// + "&ass=" + ass;
 
-   prompt("URL", u);
+//   prompt("URL", u);
 
         var r = syncAjax(u);
 
