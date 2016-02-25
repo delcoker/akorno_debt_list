@@ -191,7 +191,7 @@ function getDetails() {
     var student_id = $("#student_id").val();
 
     var b = phonegap + "php/action.php/?cmd=1&student_id=" + student_id;// + "&student_name=" + student_name + "&amount_owed=" + amount_owed + "&amount_paid=" + amount_paid + "&owe_more=" + owe_more;// 
-//    prompt("URL", b);
+    prompt("URL", b);
 
     var r = syncAjax(b);
 
