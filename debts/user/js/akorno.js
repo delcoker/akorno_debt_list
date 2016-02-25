@@ -9,8 +9,8 @@
  header("Cache-Control: no-cache, must-revalidate"); 
  */
 
-//var phonegap = "https://50.63.128.135/~csashesi/class2015/kingston-coker/mobile_web/hw_tracker_teacher/";
-var phonegap = "";
+//var phonegap = "http://50.63.128.135/~csashesi/class2015/kingston-coker/mobile_web/hw_tracker_teacher/";
+var phonegap = "http://192.168.1.101//aomg/debts/user/";
 
 function add_student() {
 
