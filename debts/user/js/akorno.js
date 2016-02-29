@@ -76,7 +76,7 @@ function enter_ip() {
 //    10.10.10.10
     if (ip.length > 10) {
         phonegap = "http://" + ip + "/aomg/debts/user/";
-        prompt("url" , phonegap);
+//        prompt("url" , phonegap);
     }
     else
     {
@@ -208,7 +208,8 @@ function getDetails() {
     else if (r.result === -1) {
         var student_id = $("#student_id").val();
         $("#student_id").val(student_id.substring(0, 6));
-        alert(r.message);
+        alert(r.message +"\nPlease add yourself to the db.");
+        window.open("index.html#add_stud", "_self");
     }
     else if (r.result === 0) {
         var student_id = $("#student_id").val();

@@ -27,13 +27,13 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div data-role="page" id="pageone" data-theme="b">
             <div data-role="header">
-                <h1>AKORNO DEBTS LIST</h1>
+                <h1>CUSTOMERS AKORNO DEBT LIST</h1>
                 <a href="#pageone" data-role="button" data-icon="" data-iconpos="right" class="ui-btn-left"><div class="">Hi </div></a>
                 <a href="#pageone" data-role="button" data-icon="arrow-u" data-iconpos="right" class="ui-btn-right"  onclick="logout()">Logout</a>
 
                 <div data-role="navbar"> 
                     <ul>
-                        <li><a href="#pageone" data-icon="minus" data-iconpos="left" class="ui-btn-active ui-state-persist" data-transition="turn">Pay-Up</a></li>
+                        <li><a href="#pageone" data-icon="minus" data-iconpos="left" class="ui-btn-active ui-state-persist" data-transition="turn">Akorno Owe's Me?</a></li>
                         <li><a href="#add_stud" data-icon="plus" data-iconpos="left" data-transition="flip" >Add New User</a></li>
                     </ul>
                 </div>
@@ -61,17 +61,17 @@
                     <label for="scn">Scan:</label>
                     <input type="button" id="scn" value="Scan Card" onclick="read()">
                     <div> &nbsp; </div>
-                    <label for="amount_owed">Amount Owed:</label>
+                    <label for="amount_owed">Amount Owes You:</label>
                     <input type="number" name="amount_owed" id="amount_owed" placeholder="$0.00" step="0.01" min="0" disabled="disabled">
                     <div> &nbsp; </div>
-                    <label for="owe_more">Akorno Owe's:</label>
-                    <input type="number" name="owe_more" id="owe_more" placeholder="$0.00" step="0.01" min="0">
+<!--                    <label for="owe_more">Akorno Owe's:</label>
+                    <input type="number" name="owe_more" id="owe_more" placeholder="$0.00" step="0.01" min="0" disabled="disabled">
                     <div> &nbsp; </div>
                     <label for="pay_some">Akorno's Paying:</label>
-                    <input type="number" name="pay_some" id="pay_some" placeholder="$0.00" step="0.01" min="0">
+                    <input type="number" name="pay_some" id="pay_some" placeholder="$0.00" step="0.01" min="0" disabled="disabled">-->
                     <div> &nbsp; </div>
                     <label></label>
-                    <a href="#" role="button" class="ui-shadow ui-btn ui-corner-all" data-transition="flip" onclick="submit()" >SUBMIT</a>
+                    <button role="button" class="ui-shadow ui-btn ui-corner-all" data-transition="flip" onclick="submit()" disabled="disabled">SUBMIT</button>
                     <div> &nbsp; </div><label></label>
 
                 </div>
@@ -90,20 +90,23 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <div data-role="page" id="add_stud" data-theme="b">
             <div data-role="header">
-                <h1>AKORNO DEBT SHEET</h1>
+                <h1>CUSTOMERS AKORNO DEBT LIST</h1>
                 <a href="#pageone" data-role="button" data-icon="" data-iconpos="right" class="ui-btn-left"><div class="">Hi </div></a>
                 <a href="#pageone" data-role="button" data-icon="arrow-u" data-iconpos="right" class="ui-btn-right"  onclick="logout()">Logout</a>
 
                 <div data-role="navbar"> 
                     <ul>
-                        <li><a href="#pageone" data-icon="minus" data-iconpos="left" data-transition="turn">Pay-Up</a></li>
-                        <li><a href="#add_stud" data-icon="plus" data-iconpos="left" data-transition="turn" class="ui-btn-active ui-state-persist">Add New User</a></li>
+                        <li><a href="#pageone" data-icon="minus" data-iconpos="left" data-transition="turn">Akorno Owe's Me?</a></li>
+                        <li><a href="#add_stud" data-icon="plus" data-iconpos="left" data-transition="turn" class="ui-btn-active ui-state-persist">Add Yourself</a></li>
                     </ul>
                 </div>
             </div>
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -->
             <div role="main" class="ui-content">
                 <p>Please Enter Details</p>
+                <p>Make sure you are on our network:</p>
+                <p>Wi-Fi: Del</p>
+                <p>Password: 123456Aa</p>
                 <div data-role="fieldcontain">
                     <div> &nbsp; </div>
                     <label for="student_name">Student Name:</label>
