@@ -10,7 +10,7 @@
  */
 
 //var phonegap = "http://50.63.128.135/~csashesi/class2015/kingston-coker/mobile_web/hw_tracker_teacher/";
-var phonegap = "http://192.168.1.101//aomg/debts/user/";
+var phonegap = "http://192.168.1.101/aomg/debts/user/";
 
 function add_student() {
 
@@ -76,7 +76,11 @@ function enter_ip() {
 //    10.10.10.10
     if (ip.length > 10) {
         phonegap = "http://" + ip + "/aomg/debts/user/";
-//        prompt("url" , phonegap);
+        prompt("url" , phonegap);
+    }
+    else
+    {
+        phonegap = "http://192.168.1.101/aomg/debts/user/";
     }
 }
 
